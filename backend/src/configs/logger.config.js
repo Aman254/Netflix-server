@@ -13,7 +13,7 @@ const logger = winston.createLogger({
     enumerateErrorFormat(),
     process.env.NODE_ENV === "development"
       ? winston.format.colorize()
-      : winston.format.uncolorize(),
+      : winston.format.colorize(),
     winston.format.splat(),
     winston.format.printf(({ level, message }) => `${level}: ${message}`)
   ),

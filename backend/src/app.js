@@ -7,6 +7,7 @@ import compression from "compression";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import createHttpError from "http-errors";
+import routes from "./Routes/index.js";
 
 //Dotenv Configuration
 dotenv.config();
@@ -33,6 +34,9 @@ app.use(cookieParser());
 
 //Compression
 app.use(compression());
+
+// api/v1/ Routes
+app.use("/api/v1/", routes);
 
 app.use(cors({ origin: "http://localhost:3000" }));
 
