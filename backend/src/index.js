@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8000;
 
 mongoose.connection.on("error", (err) => {
   logger.error(`Error in Connecting to MongoDB: ${err}`);
-  process.exit();
+  process.exit(1);
 });
 
 mongoose.connect(DATABASE_URL, {}).then(() => {
